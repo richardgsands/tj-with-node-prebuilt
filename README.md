@@ -4,11 +4,11 @@ This repo contains two NodeJS web applications all ready to run:
 - main - public website
 - admin - private webapp for content management (to be run on same server on different port)
 
-Note that the admin app should be in the same parent folder as the main app, so that relative paths between the two are correct. (The admin server is not necessary if you have another way to provide access to update files in main\client\cms). 
+Note that the admin app should be in the same parent folder as the main app, so that relative paths between the two are correct. (The admin server is not necessary if you have another way to provide access to update files in `main\client\cms`). 
 
 *This repo has been created because building from source was not working - and contains all the necessary dependencies (i.e. from npm and bower) to work.*
 
-[Original repo can be found here](https://github.com/richardgsands/tj-with-node-prebuilt) 
+[Original repo can be found here](https://github.com/richardgsands/tj-with-node) 
 
 ## Installation and running
 
