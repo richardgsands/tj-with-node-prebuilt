@@ -41,7 +41,7 @@ It should have the following format:
   "adminPass": "password"
 }
 ```
-*If these are changed after starting the NodeJS server, a restart (of the NodeJS server) will be required*
+*If these are changed after starting the NodeJS server, a restart (of the NodeJS server) will be required - this can be done with the command `forever restartall`*
 
 ### Start web server!
 
@@ -75,33 +75,29 @@ Now website will be available on standard HTTP port (80)
 
 ### To files directly on server
 
-See [Main App Architecture](#main-app-architecture)
+See [Main App Architecture](#main-app-architecture) for guide on how to make changes to the site.
+
+**Make sure you are changing the files in `main` and not `admin`** (unless you want to makes changes to the admin app)
+
+Once done, navigate to the `main` folder and run:
+```
+grunt refresh
+```
 
 ### On a local machine
 
-To make changes, fork the repository on GitHub (just need a free GitHub account for that). Then set up a server on a local machine (ideally Linux / Mac) with node and git installed. This can be done using instructions in Instructions to set up server above, but:
+To make changes on a local dev machine, fork the repository on GitHub (just need a free GitHub account for that). Then set up a server on a local machine (ideally Linux / Mac) with node and git installed. This can be done using instructions in Instructions to set up server above, but:
 	- use your fork repository to for git clone command
 	- no need to do port redirect
-	- no need to run using forever, `grunt serve` will allow you to access server at http://localhost:9000).
+	- no need to run using forever, `grunt serve` will allow you to access server at http://localhost:9000)
 
-## Deploying changes to server
+Once you've committed and pushed changes to your fork, add it as as remote on the server and run `git pull` to deploy. As all the build files are committed in this version of the repo, there's no need to do anything else.
 
-Make the changes (see information about files below in App Architecture), then commit to the local git repository on your machine, and push to your remote repository. Then SSH into server, navigate to the `tj-with-node` folder, and run `git pull`.
-
-Then, do the following to compile and deploy:
-
-Run `grunt refresh` to compile Sass, etc, as before
-
-Restart web server using forever:
-forever restartall
-
-App Architecture
-
-App root directory is /root/tj-with-node (if server has been set up as above)
+(Client only changes shouldn't require a server restart, but you can restart it with `forever restartall` if necessary.)
 
 ## Main App Architecture
 
-Two main folders: server and client.
+There are two key folders in `main`: server and client.
 
 Server folder contains code running on the web server, and handles sending emails (for contact section)
 Client folder contains all content and code which runs in the web browser accessing the website - and this is basically where most of the website is.
@@ -116,7 +112,7 @@ In client folder:
   - app/views/
   - app/main/main.scss
 
-index.html
+`index.html`
 The client part of website is written using AngularJS - so index.html is loaded in the browser, and that contains all code needed to load everything else
 
 `app/app.js`
