@@ -32,12 +32,9 @@ cd tj-with-node-prebuilt
 
 ### Define settings
 
-**Create settings file (admin app won't work without this):**
-```
-touch admin/server/settings.json
-```
+**Edit settings file `admin/server/settings.json` to set a secure username and password:**
 
-Edit the settings file to set username and password. It should have the following format:
+It should have the following format:
 ```json
 {
   "adminUser": "admin",
