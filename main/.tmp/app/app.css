@@ -6661,9 +6661,6 @@ button.close {
 .valign-middle {
   vertical-align: middle; }
 
-.align-left {
-  text-align: left; }
-
 .align-center {
   text-align: center; }
 
@@ -6698,9 +6695,6 @@ body {
 
 @media (min-width: 651px) {
   .small-screen-only {
-    display: none !important; } }
-@media (min-width: 1003px) {
-  .small-or-medium-screen-only {
     display: none !important; } }
 @media (max-width: 650px) {
   .medium-or-large-screen-only {

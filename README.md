@@ -70,3 +70,69 @@ sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port
 Now website will be available on standard HTTP port (80)
 
 *Port 9001 will need to be open (or redirected to another port if preferred) as well for the admin app.*
+
+## Making changes
+
+### To files directly on server
+
+See [Main App Architecture](#main-app-architecture)
+
+### On a local machine
+
+To make changes, fork the repository on GitHub (just need a free GitHub account for that). Then set up a server on a local machine (ideally Linux / Mac) with node and git installed. This can be done using instructions in Instructions to set up server above, but:
+	- use your fork repository to for git clone command
+	- no need to do port redirect
+	- no need to run using forever, `grunt serve` will allow you to access server at http://localhost:9000).
+
+## Deploying changes to server
+
+Make the changes (see information about files below in App Architecture), then commit to the local git repository on your machine, and push to your remote repository. Then SSH into server, navigate to the `tj-with-node` folder, and run `git pull`.
+
+Then, do the following to compile and deploy:
+
+Run `grunt refresh` to compile Sass, etc, as before
+
+Restart web server using forever:
+forever restartall
+
+App Architecture
+
+App root directory is /root/tj-with-node (if server has been set up as above)
+
+## Main App Architecture
+
+Two main folders: server and client.
+
+Server folder contains code running on the web server, and handles sending emails (for contact section)
+Client folder contains all content and code which runs in the web browser accessing the website - and this is basically where most of the website is.
+
+In client folder:
+`main/client/`
+
+  - index.html
+  - app/app.js
+  - app/main/main.controller.js
+  - app/main/main.jade
+  - app/views/
+  - app/main/main.scss
+
+index.html
+The client part of website is written using AngularJS - so index.html is loaded in the browser, and that contains all code needed to load everything else
+
+`app/app.js`
+Javascript file to set up AngularJS - this file contains code to handle URL links to different pages on website
+
+`app/main/main.controller.js`
+Main javascript file containing code for website - i.e. to send HTTP requests to server for the Contact section, control audio playback, load up gallery images, define URL addresses that appear in navbar and point to particular views (in app/views)
+
+`app/main/main.jade`
+Layout for main page - including sidebar, and navbar
+
+`app/views/`
+Folder containing layouts for sections of website (in navbar) - i.e. home, biography, education, ensembles, contact, gallery, music, links. Each view file in here should be wired up to a URL in app/main/main.controller.js in navSections array
+
+`app/main/main.scss`
+Stylesheet for website - containing CSS classes that are used in Layout (jade) files
+
+** NB: If any of these files are changed, `grunt refresh` must be run on command line to compile everything (Jade and SCSS files into HTML / CSS, etc - see Making changes above**
+
