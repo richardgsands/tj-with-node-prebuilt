@@ -114,6 +114,11 @@ var links = [
         "link": "http://www.jillkemp.com/"
     },
     {
+      "title": "Claire Overbury",
+      "description": "Flute",
+      "link": "http://www.claireoverbury.com/"
+    },
+    {
       "title": "Graham Neal",
       "description": "Tenor",
       "link": "http://www.grahamneal.com"
@@ -141,7 +146,7 @@ var links = [
     {
         "title": "Bromley Parish Church",
         "description": "Parish church and concert venue",
-        "link": "http://www.bromleyparishchurch.org/concerts-and-recitals"
+        "link": "http://www.bromleyparishchurch.org/music"
     },
     {
         "title": "Just Flutes",
@@ -157,11 +162,6 @@ var links = [
         "title": "BBIS",
         "description": "Instrument insurance",
         "link": "http://www.brassbandinsuranceservices.co.uk/"
-    },
-    {
-        "title": "East Dulwich Academy",
-        "description": "Academy of music and performing arts",
-        "link": "http://www.eastdulwichacademy.org/"
     }
 ];
 
