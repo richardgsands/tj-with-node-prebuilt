@@ -6696,6 +6696,9 @@ body {
 @media (min-width: 651px) {
   .small-screen-only {
     display: none !important; } }
+@media (min-width: 1003px) {
+  .small-or-medium-screen-only {
+    display: none !important; } }
 @media (max-width: 650px) {
   .medium-or-large-screen-only {
     display: none !important; } }
@@ -6774,23 +6777,26 @@ body {
     opacity: 0.4; }
     .sidepane .header-carousel .audio-container .track-list .track-item.playing {
       opacity: 0.8; }
-  .sidepane .header-carousel .events-container .events-container-header {
+
+.events-container {
+  margin-bottom: 12px; }
+  .events-container .events-container-header {
     opacity: 0.8; }
-  .sidepane .header-carousel .events-container .event-item {
+  .events-container .event-item {
     margin-top: 10px;
     opacity: 0.8;
     transition: opacity 0.2s linear; }
-    .sidepane .header-carousel .events-container .event-item a {
+    .events-container .event-item a {
       color: inherit; }
-    .sidepane .header-carousel .events-container .event-item.clickable:hover {
+    .events-container .event-item.clickable:hover {
       opacity: 1; }
-      .sidepane .header-carousel .events-container .event-item.clickable:hover a {
+      .events-container .event-item.clickable:hover a {
         text-decoration: none; }
-    .sidepane .header-carousel .events-container .event-item .event-item-date {
+    .events-container .event-item .event-item-date {
       font-size: 0.8em; }
-    .sidepane .header-carousel .events-container .event-item .event-item-location {
+    .events-container .event-item .event-item-location {
       font-size: 0.8em; }
-    .sidepane .header-carousel .events-container .event-item .event-item-timeago {
+    .events-container .event-item .event-item-timeago {
       font-size: 0.8em;
       font-style: italic; }
 

@@ -51,6 +51,11 @@ body {
     display: none !important;
   }
 }
+@media (min-width: $screensize-threshold-large + 1) {     // i.e. when screen is small
+  .small-or-medium-screen-only {
+    display: none !important;
+  }
+}
 @media (max-width: $screensize-threshold-medium) {     // i.e. when screen is small
   .medium-or-large-screen-only {
     display: none !important;
@@ -178,50 +183,52 @@ body {
       }
     }
 
-    .events-container {
-
-      .events-container-header {
-        opacity: 0.8;
-      }
-
-      .event-item {
-        margin-top: 10px;
-        opacity: 0.8;
-        transition: opacity 0.2s linear;
-
-        a {
-          color: inherit;
-        }
-
-        &.clickable:hover {
-          opacity: 1;
-          a {
-            text-decoration: none;
-          }
-        }
-
-        .event-item-date {
-          font-size: 0.8em;
-        }
-        .event-item-title {
-
-        }
-        .event-item-location {
-          font-size: 0.8em;
-        }
-        .event-item-timeago {
-          font-size: 0.8em;
-          font-style: italic;
-        }
-
-      }
-
-    }
-
-
   }
 
 }
+
+.events-container {
+
+  .events-container-header {
+    opacity: 0.8;
+  }
+
+  .event-item {
+    margin-top: 10px;
+    opacity: 0.8;
+    transition: opacity 0.2s linear;
+
+    a {
+      color: inherit;
+    }
+
+    &.clickable:hover {
+      opacity: 1;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .event-item-date {
+      font-size: 0.8em;
+    }
+    .event-item-title {
+
+    }
+    .event-item-location {
+      font-size: 0.8em;
+    }
+    .event-item-timeago {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+
+  }
+
+  margin-bottom: 12px;
+
+}
+
 
 @media (max-width: $screensize-threshold-large) {
   .sidepane {
