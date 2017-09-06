@@ -6800,6 +6800,18 @@ body {
       font-size: 0.8em;
       font-style: italic; }
 
+/* horizontal scroller */
+.container-horizontal-scroll > .row {
+  overflow-x: auto;
+  white-space: nowrap; }
+
+.container-horizontal-scroll > .row > * {
+  white-space: initial; }
+
+.container-horizontal-scroll > .row > .col-xs-4 {
+  display: inline-block;
+  float: none; }
+
 @media (max-width: 1002px) {
   .sidepane {
     display: none; } }

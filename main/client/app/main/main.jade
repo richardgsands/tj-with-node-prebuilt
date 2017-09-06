@@ -78,12 +78,13 @@
         .stave-background-line
         .stave-background-line
 
+    // upcoming events for smaller screen (i.e. when no sidebar)
     .sidepane-container.events-container.small-or-medium-screen-only(ng-if="upcomingEvents.length")
       .events-container-header
         span.glyphicon.glyphicon-calendar.spacer-right.valign-middle
         span.valign-middle Upcoming events
       .event-list
-        .container
+        .container.container-horizontal-scroll
           .row
             .event-item.col-xs-4(ng-repeat="event in upcomingEvents", ng-class="{clickable: event.link}")
               a(ng-if="event.link", href="{{event.link}}", target="_blank")
