@@ -230,19 +230,16 @@ body {
 }
 
 /* horizontal scroller */
-.container-horizontal-scroll {
-
-}
 .container-horizontal-scroll > .row {
   overflow-x: auto;
   white-space: nowrap;
 }
+// children of rows assumed to be cols
 .container-horizontal-scroll > .row > * {
   white-space: initial;
-}
-.container-horizontal-scroll > .row > .col-xs-4 {
   display: inline-block;
   float: none;
+  vertical-align: top;
 }
 
 @media (max-width: $screensize-threshold-large) {

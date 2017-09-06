@@ -6806,11 +6806,10 @@ body {
   white-space: nowrap; }
 
 .container-horizontal-scroll > .row > * {
-  white-space: initial; }
-
-.container-horizontal-scroll > .row > .col-xs-4 {
+  white-space: initial;
   display: inline-block;
-  float: none; }
+  float: none;
+  vertical-align: top; }
 
 @media (max-width: 1002px) {
   .sidepane {
